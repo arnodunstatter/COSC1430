@@ -1,0 +1,6 @@
+﻿  Source.cpp
+  matrix.cpp
+C:\Users\arnod\Documents\School 2.0\Comp Sci\Summer 2020\COSC 1430\Labs\Lab7 old main\Lab7 old main\matrix.cpp(118,31): warning C4018: '<=': signed/unsigned mismatch
+C:\Users\arnod\Documents\School 2.0\Comp Sci\Summer 2020\COSC 1430\Labs\Lab7 old main\Lab7 old main\matrix.cpp(403,31): warning C4018: '<=': signed/unsigned mismatch
+  Generating Code...
+  Lab7 old main.vcxproj -> C:\Users\arnod\Documents\School 2.0\Comp Sci\Summer 2020\COSC 1430\Labs\Lab7 old main\Debug\Lab7 old main.exe

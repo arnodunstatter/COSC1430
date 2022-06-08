@@ -1,0 +1,86 @@
+/***************************************************************
+* The program shows how to built a linear table out of a       *
+* table using the zig-zag movements.                           *
+****************************************************************/
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    // Constant Declaration
+    const int CAPACITY = 4;
+
+    // Array Declaration
+    int square[CAPACITY][CAPACITY];
+    int linear[CAPACITY * CAPACITY];
+
+    // Variable Declaration
+    int n, row, col;
+
+    // input and validate array size (n)
+    do
+    {
+        cout << "Enter the size (n): ";
+        cin >> n;
+    } while (n < 1 || n > CAPACITY);
+
+    // Fill up the square table
+    for (int i = 0; i < n; i++)
+    {
+        cout << "Enter " << n << " Integers for row " << i << ": ";
+        for (int j = 0; j < n; j++)
+        {
+            cin >> square[i][j];
+        }
+    }
+
+    // Build the linear table
+    row = 0; // initialization
+    col = 0;  // initialization 
+    for (int i = 0; i < n * n; i++)
+    {
+        linear[i] = square[row][col];
+        // update row and col
+        if ((row + col) % 2 == 0)  // Handling even points 
+        {
+            if ((row == 0) && (col != n - 1))  // Region 1
+            {
+                col++;
+            }
+            else if (col == n - 1) // Region 2 
+            {
+                row++;
+            }
+            else  // Region 5
+            {
+                row--;
+                col++;
+            }
+        }
+        else  // Handling odd points 
+        {
+            if ((col == 0) && (row != n - 1)) // Region 3 
+            {
+                row++;
+            }
+            else if (row == n - 1)  // Region 4
+            {
+                col++;
+            }
+            else  // Region 5
+            {
+                row++;
+                col--;
+            }
+        }
+    }
+
+    // Output linear table
+    cout << "The contents of the linear table: " << endl;
+    for (int i = 0; i < n * n; i++)
+    {
+        cout << linear[i] << " ";
+    }
+
+    return 0;
+}
